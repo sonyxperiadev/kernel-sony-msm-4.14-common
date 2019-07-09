@@ -1,1 +1,0 @@
-# kernel-sony-msm-4.14-common
