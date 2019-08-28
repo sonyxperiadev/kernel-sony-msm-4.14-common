@@ -10,6 +10,7 @@ export PATH=$CC:$CC32:$CLANG:$PATH
 
 # Mkdtimg tool
 export MKDTIMG=$ANDROID_ROOT/out/host/linux-x86/bin/mkdtimg
+export MKDTIMG=$ANDROID_ROOT/prebuilts/misc/linux-x86/libufdt/mkdtimg
 
 # Build command
 export BUILD="make O=$KERNEL_TMP ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-android- CROSS_COMPILE_ARM32=arm-linux-androideabi- -j$(nproc)"
