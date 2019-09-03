@@ -26,8 +26,9 @@ YOSHINO="lilac maple poplar"
 NILE="discovery pioneer voyager"
 GANGES="kirin mermaid"
 TAMA="akari apollo akatsuki"
+KUMANO="griffin"
 
-PLATFORMS="loire tone yoshino nile ganges tama"
+PLATFORMS="loire tone yoshino nile ganges tama griffin"
 
 cd $KERNEL_TOP/kernel
 
@@ -57,6 +58,9 @@ ganges)
     DTBO="false";;
 tama)
     DEVICE=$TAMA;
+    DTBO="true";;
+kumano)
+    DEVICE=$KUMANO;
     DTBO="true";;
 esac
 
