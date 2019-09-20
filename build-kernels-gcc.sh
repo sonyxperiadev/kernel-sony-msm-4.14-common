@@ -28,7 +28,7 @@ GANGES="kirin mermaid"
 TAMA="akari apollo akatsuki"
 KUMANO="griffin"
 
-PLATFORMS="loire tone yoshino nile ganges tama griffin"
+PLATFORMS="loire tone yoshino nile ganges tama kumano"
 
 cd $KERNEL_TOP/kernel
 
