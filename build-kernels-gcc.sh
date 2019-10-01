@@ -20,15 +20,15 @@ if [ ! -f $MKDTIMG ]; then
     make mkdtimg
 fi
 
-LOIRE="suzu kugo blanc"
-TONE="dora kagura keyaki"
-YOSHINO="lilac maple poplar"
-NILE="discovery pioneer voyager"
-GANGES="kirin mermaid"
-TAMA="akari apollo akatsuki"
-KUMANO="griffin"
+LOIRE="${LOIRE:-suzu kugo blanc}"
+TONE="${TONE:-dora kagura keyaki}"
+YOSHINO="${YOSHINO:-lilac maple poplar}"
+NILE="${NILE:-discovery pioneer voyager}"
+GANGES="${GANGES:-kirin mermaid}"
+TAMA="${TAMA:-akari apollo akatsuki}"
+KUMANO="${KUMANO:-griffin}"
 
-PLATFORMS="loire tone yoshino nile ganges tama kumano"
+PLATFORMS="${PLATFORMS:-loire tone yoshino nile ganges tama kumano}"
 
 cd $KERNEL_TOP/kernel
 
