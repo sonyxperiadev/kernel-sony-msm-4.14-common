@@ -51,7 +51,7 @@ for platform in $PLATFORMS; do \
         echo "Copying new kernel image ..."
         ${CP_BLOB}-${device}
         if [ $DTBO = "true" ]; then
-            $MKDTIMG create "$KERNEL_TOP"/common-kernel/dtbo-$device\.img `find $KERNEL_TMP/arch/arm64/boot/dts -name "*.dtbo"`
+            $MKDTIMG create "$KERNEL_TOP"/common-kernel/dtbo-$device\.img "$(find "$KERNEL_TMP"/arch/arm64/boot/dts -name "*.dtbo")"
         fi
     done
 done
