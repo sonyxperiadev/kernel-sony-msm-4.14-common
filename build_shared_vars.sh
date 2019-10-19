@@ -1,4 +1,4 @@
-export ANDROID_ROOT=$(pwd)
+export ANDROID_ROOT="$PWD"
 
 YOSHINO="lilac maple poplar"
 NILE="discovery pioneer voyager"
