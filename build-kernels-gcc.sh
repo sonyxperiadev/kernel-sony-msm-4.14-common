@@ -26,7 +26,7 @@ YOSHINO="${YOSHINO:-lilac maple poplar}"
 NILE="${NILE:-discovery pioneer voyager}"
 GANGES="${GANGES:-kirin mermaid}"
 TAMA="${TAMA:-akari apollo akatsuki}"
-KUMANO="${KUMANO:-griffin}"
+KUMANO="${KUMANO:-bahamut griffin}"
 
 PLATFORMS="${PLATFORMS:-loire tone yoshino nile ganges tama kumano}"
 
