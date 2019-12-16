@@ -56,7 +56,9 @@ for platform in $PLATFORMS; do \
                 echo "Copying new kernel image ..."
                 cp "$KERNEL_TMP/arch/arm64/boot/Image.gz-dtb" "$KERNEL_TOP/common-kernel/kernel-dtb-$device"
                 if [ $DTBO = "true" ]; then
-                    $MKDTIMG create "$KERNEL_TOP"/common-kernel/dtbo-$device\.img "$(find "$KERNEL_TMP"/arch/arm64/boot/dts -name "*.dtbo")"
+                    # shellcheck disable=SC2046
+                    # note: We want wordsplitting in this case.
+                    $MKDTIMG create "$KERNEL_TOP"/common-kernel/dtbo-${device}.img $(find "$KERNEL_TMP"/arch/arm64/boot/dts -name "*.dtbo")
                 fi
 
             fi
