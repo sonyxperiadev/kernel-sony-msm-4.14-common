@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd ../../../..
 
 . "$OLDPWD/build_shared_vars.sh"
