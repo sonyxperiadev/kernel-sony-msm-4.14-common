@@ -38,7 +38,7 @@ for platform in $PLATFORMS; do \
     for device in $DEVICE; do \
         (
             KERNEL_TMP=$KERNEL_TMP-${device}
-            rm -rf "${KERNEL_TMP}"
+            [ ! "$keep_kernel_tmp" ] && rm -rf "${KERNEL_TMP}"
             mkdir -p "${KERNEL_TMP}"
 
             echo "================================================="
