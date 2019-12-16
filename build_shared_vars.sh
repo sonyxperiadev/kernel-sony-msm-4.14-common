@@ -1,7 +1,20 @@
-arguments=k
+usage(){
+    cat <<EOF
+Build kernel for supported devices
+Usage: ${0##*/} [-k]
+
+Options:
+-k      keep kernel tmp after build
+EOF
+}
+
+
+arguments=kh
 while getopts $arguments argument ; do
     case $argument in
         k) keep_kernel_tmp=t ;;
+        h) usage; exit 0;;
+        ?) usage; exit 1;;
     esac
 done
 
