@@ -68,10 +68,4 @@ done
 
 
 echo "================================================="
-echo "Clean up environment"
 echo "Done!"
-unset ANDROID_ROOT
-unset KERNEL_TOP
-unset KERNEL_CFG
-unset KERNEL_TMP
-unset BUILD
