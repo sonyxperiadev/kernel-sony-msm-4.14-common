@@ -1,18 +1,20 @@
 usage(){
     cat <<EOF
 Build kernel for supported devices
-Usage: ${0##*/} [-k]
+Usage: ${0##*/} [-k -d <device>]
 
 Options:
--k      keep kernel tmp after build
+-k              keep kernel tmp after build
+-d <device>     only build the kernel for <device>
 EOF
 }
 
 
-arguments=kh
+arguments=khd:
 while getopts $arguments argument ; do
     case $argument in
         k) keep_kernel_tmp=t ;;
+        d) only_build_for=$OPTARG;;
         h) usage; exit 0;;
         ?) usage; exit 1;;
     esac
