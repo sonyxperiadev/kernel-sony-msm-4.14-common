@@ -1,3 +1,10 @@
+arguments=k
+while getopts $arguments argument ; do
+    case $argument in
+        k) keep_kernel_tmp=t ;;
+    esac
+done
+
 if [ -z "$ANDROID_BUILD_TOP" ]; then
     ANDROID_ROOT=$(realpath "$PWD")
     echo "ANDROID_BUILD_TOP not set, guessing root at $ANDROID_ROOT"
