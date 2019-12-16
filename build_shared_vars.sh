@@ -1,4 +1,9 @@
-export ANDROID_ROOT="$PWD"
+if [ -z "$ANDROID_BUILD_TOP" ]; then
+    ANDROID_ROOT=$(realpath "$PWD")
+    echo "ANDROID_BUILD_TOP not set, guessing root at $ANDROID_ROOT"
+else
+    ANDROID_ROOT="$ANDROID_BUILD_TOP"
+fi
 
 YOSHINO="lilac maple poplar"
 NILE="discovery pioneer voyager"
