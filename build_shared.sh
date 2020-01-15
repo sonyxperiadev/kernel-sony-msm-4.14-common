@@ -51,7 +51,8 @@ for platform in $PLATFORMS; do \
                 echo "The build may take up to 10 minutes. Please be patient ..."
                 echo "Building new kernel image ..."
                 echo "Logging to $KERNEL_TMP/build.log"
-                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} >"$KERNEL_TMP/build.log" 2>&1;
+                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} ${CC:+CC="${CC}"} \
+                     >"$KERNEL_TMP"/build.log 2>&1;
 
                 echo "Copying new kernel image ..."
                 cp "$KERNEL_TMP/arch/arm64/boot/Image.gz-dtb" "$KERNEL_TOP/common-kernel/kernel-dtb-$device"
