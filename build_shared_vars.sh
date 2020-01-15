@@ -1,3 +1,17 @@
+find_repo_root()
+# desc: Find root of a repo tree and echo it
+{
+    (
+        max_depth=10
+        while ! [ -e "$PWD/.repo" ] ; do
+            [ $max_depth -eq 0 ] && return 1
+            cd ..
+            max_depth=$((max_depth-1))
+        done
+        echo "$PWD"
+    )
+}
+
 usage(){
     cat <<EOF
 Build kernel for supported devices
@@ -21,7 +35,8 @@ while getopts $arguments argument ; do
 done
 
 if [ -z "$ANDROID_BUILD_TOP" ]; then
-    ANDROID_ROOT=$(realpath "$PWD")
+    ANDROID_ROOT=$(find_repo_root)
+    ANDROID_ROOT=$(realpath "$ANDROID_ROOT")
     echo "ANDROID_BUILD_TOP not set, guessing root at $ANDROID_ROOT"
 else
     ANDROID_ROOT="$ANDROID_BUILD_TOP"
