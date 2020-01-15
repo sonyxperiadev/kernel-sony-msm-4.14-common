@@ -46,7 +46,7 @@ for platform in $PLATFORMS; do \
 
                 echo "================================================="
                 echo "Platform -> ${platform} :: Device -> $device"
-                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} aosp_$platform"_"$device\_defconfig
+                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} aosp_${platform}_${device}_defconfig
 
                 echo "The build may take up to 10 minutes. Please be patient ..."
                 echo "Building new kernel image ..."
