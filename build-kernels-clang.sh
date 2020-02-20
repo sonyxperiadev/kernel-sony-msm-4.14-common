@@ -4,8 +4,8 @@ export KERNEL_TOP=$ANDROID_ROOT/kernel/sony/msm-4.14
 export KERNEL_TMP=$ANDROID_ROOT/out/kernel-tmp
 
 # Cross Compiler
-export GCC_CC=../../prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-export CLANG_CC=../../prebuilts/clang/host/linux-x86/clang-r353983c/bin/clang
+export GCC_CC=$ANDROID_ROOT/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+export CLANG_CC=$ANDROID_ROOT/prebuilts/clang/host/linux-x86/clang-r353983c/bin/clang
 
 # Mkdtimg tool
 export MKDTIMG=$ANDROID_ROOT/out/host/linux-x86/bin/mkdtimg
