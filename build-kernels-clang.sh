@@ -30,8 +30,9 @@ NILE="discovery pioneer voyager"
 GANGES="kirin mermaid"
 TAMA="akari apollo akatsuki"
 KUMANO="bahamut griffin"
+SEINE="pdx201"
 
-PLATFORMS="yoshino nile ganges tama kumano"
+PLATFORMS="yoshino nile ganges tama kumano seine"
 
 cd $KERNEL_TOP/kernel
 
@@ -64,6 +65,9 @@ tama)
     DTBO="true";;
 kumano)
     DEVICE=$KUMANO;
+    DTBO="true";;
+seine)
+    DEVICE=$SEINE;
     DTBO="true";;
 esac
 
