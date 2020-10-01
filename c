@@ -22,7 +22,7 @@ if [ ! -f $MKDTIMG ]; then
     echo "mkdtimg: File not found!"
     echo "Building mkdtimg"
     export ALLOW_MISSING_DEPENDENCIES=true
-    make mkdtimg
+    $ANDROID_ROOT/build/soong/soong_ui.bash --make-mode mkdtimg
 fi
 
 YOSHINO="lilac maple poplar"
