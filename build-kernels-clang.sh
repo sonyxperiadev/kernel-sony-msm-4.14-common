@@ -25,14 +25,14 @@ if [ ! -f $MKDTIMG ]; then
     $ANDROID_ROOT/build/soong/soong_ui.bash --make-mode mkdtimg
 fi
 
-YOSHINO="lilac maple poplar"
-NILE="discovery pioneer voyager"
-GANGES="kirin mermaid"
-TAMA="akari apollo akatsuki"
-KUMANO="bahamut griffin"
-SEINE="pdx201"
+YOSHINO="${YOSHINO:-lilac maple poplar}"
+NILE="${NILE:-discovery pioneer voyager}"
+GANGES="${GANGES:-kirin mermaid}"
+TAMA="${TAMA:-akari apollo akatsuki}"
+KUMANO="${KUMANO:-bahamut griffin}"
+SEINE="${SEINE:-pdx201}"
 
-PLATFORMS="yoshino nile ganges tama kumano seine"
+PLATFORMS="${PLATFORMS:-yoshino nile ganges tama kumano seine}"
 
 cd $KERNEL_TOP/kernel
 
@@ -89,7 +89,7 @@ for device in $DEVICE; do \
 
     echo "The build may take up to 10 minutes. Please be patient ..."
     echo "Building new kernel image ..."
-    echo "Loggin to $KERNEL_TMP/build_log_${device}"
+    echo "Logging to $KERNEL_TMP/build_log_${device}"
     $BUILD >$KERNEL_TMP/build_log_${device} 2>&1;
 
     echo "Copying new kernel image ..."
