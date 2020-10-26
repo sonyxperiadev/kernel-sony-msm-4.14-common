@@ -5,7 +5,10 @@ export KERNEL_TOP=$ANDROID_ROOT/kernel/sony/msm-4.14
 export KERNEL_TMP=$ANDROID_ROOT/out/kernel-tmp
 export CC=$ANDROID_ROOT/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
 export CC32=$ANDROID_ROOT/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/
-export CLANG=$ANDROID_ROOT/prebuilts/clang/host/linux-x86/clang-r370808/bin/
+# Get the clang release from the current AOSP documentation
+export CLANG_RELEASE=$(awk '/^\* \[\*\*Android Linux Kernel/{f=NR} /^  \* Currently clang-/ && f==NR-1 {print $NF; exit}' \
+    $ANDROID_ROOT/prebuilts/clang/host/linux-x86/README.md)
+export CLANG=$ANDROID_ROOT/prebuilts/clang/host/linux-x86/$CLANG_RELEASE/bin/
 export PATH=$CC:$CC32:$CLANG:$PATH
 
 # Mkdtimg tool
