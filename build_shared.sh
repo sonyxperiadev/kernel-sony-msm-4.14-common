@@ -46,12 +46,19 @@ for platform in $PLATFORMS; do \
 
                 echo "================================================="
                 echo "Platform -> ${platform} :: Device -> $device"
-                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} aosp_${platform}_${device}_defconfig
+                make O="$KERNEL_TMP" ARCH=arm64 \
+                                          CROSS_COMPILE=aarch64-linux-android- \
+                                          CROSS_COMPILE_ARM32=arm-linux-androideabi- \
+                                          -j$(nproc) ${BUILD_ARGS} ${CC:+CC="${CC}"} \
+                                          aosp_${platform}_${device}_defconfig
 
                 echo "The build may take up to 10 minutes. Please be patient ..."
                 echo "Building new kernel image ..."
                 echo "Logging to $KERNEL_TMP/build.log"
-                make O="$KERNEL_TMP" ARCH=arm64 CROSS_COMPILE="$CROSS_COMPILE" -j$(nproc) ${BUILD_ARGS} ${CC:+CC="${CC}"} \
+                make O="$KERNEL_TMP" ARCH=arm64 \
+                     CROSS_COMPILE=aarch64-linux-android- \
+                     CROSS_COMPILE_ARM32=arm-linux-androideabi- \
+                     -j$(nproc) ${BUILD_ARGS} ${CC:+CC="${CC}"} \
                      >"$KERNEL_TMP"/build.log 2>&1;
 
                 echo "Copying new kernel image ..."
