@@ -47,8 +47,9 @@ NILE="discovery pioneer voyager"
 GANGES="kirin mermaid"
 TAMA="akari apollo akatsuki"
 KUMANO="griffin bahamut"
+SEINE="pdx201"
 
-PLATFORMS="yoshino nile ganges tama kumano"
+PLATFORMS="yoshino nile ganges tama kumano seine"
 
 # Mkdtimg tool
 MKDTIMG=$ANDROID_ROOT/out/host/linux-x86/bin/mkdtimg

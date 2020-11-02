@@ -33,6 +33,9 @@ for platform in $PLATFORMS; do \
         kumano)
             DEVICE=$KUMANO;
             DTBO="true";;
+        seine)
+            DEVICE=$SEINE;
+            DTBO="true";;
     esac
 
     for device in $DEVICE; do \
