@@ -30,6 +30,7 @@ Options:
 -k              keep kernel tmp after build
 -d <device>     only build the kernel for <device>
 -O <directory>  build kernel in <directory>
+-D <directory>  copy kernel/dtbo to <directory>
 EOF
 }
 
@@ -50,13 +51,15 @@ MKDTIMG=$ANDROID_ROOT/out/host/linux-x86/bin/mkdtimg
 KERNEL_TOP=$ANDROID_ROOT/kernel/sony/msm-4.14
 # $KERNEL_TMP sub dir per script
 KERNEL_TMP=$ANDROID_ROOT/out/${0##*-}/kernel-tmp
+OUT_OBJ_DEST="$KERNEL_TOP"/common-kernel
 
-arguments=khd:O:
+arguments=khd:O:D:
 while getopts $arguments argument ; do
     case $argument in
         k) keep_kernel_tmp=t ;;
         d) only_build_for=$OPTARG;;
         O) KERNEL_TMP=$OPTARG;build_directory=$OPTARG;;
+        D) OUT_OBJ_DEST=$OPTARG;;
         h) usage; exit 0;;
         ?) usage; exit 1;;
     esac

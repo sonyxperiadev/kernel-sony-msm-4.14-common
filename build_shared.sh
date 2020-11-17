@@ -65,11 +65,11 @@ for platform in $PLATFORMS; do \
                      >"$KERNEL_TMP"/build.log 2>&1;
 
                 echo "Copying new kernel image ..."
-                cp "$KERNEL_TMP/arch/arm64/boot/Image.gz-dtb" "$KERNEL_TOP/common-kernel/kernel-dtb-$device"
+                cp "$KERNEL_TMP/arch/arm64/boot/Image.gz-dtb" "$OUT_OBJ_DEST/kernel-dtb-$device"
                 if [ $DTBO = "true" ]; then
                     # shellcheck disable=SC2046
                     # note: We want wordsplitting in this case.
-                    $MKDTIMG create "$KERNEL_TOP"/common-kernel/dtbo-${device}.img $(find "$KERNEL_TMP"/arch/arm64/boot/dts -name "*.dtbo")
+                    $MKDTIMG create "$OUT_OBJ_DEST/dtbo-${device}.img" $(find "$KERNEL_TMP"/arch/arm64/boot/dts -name "*.dtbo")
                 fi
 
             fi
